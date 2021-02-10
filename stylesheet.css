@@ -52,5 +52,7 @@ button:hover {
 }
 
 @media (max-width: 670px) {
+    .calculator {
     width: 100%;
+    }
 }
