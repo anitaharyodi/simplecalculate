@@ -50,3 +50,7 @@ button:hover {
 .operator:hover, .equal-sign:hover {
     background-color: #b9929e;
 }
+
+@media (max-width: 670px) {
+    
+}
