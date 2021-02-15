@@ -32,12 +32,13 @@ operators.forEach((operator) => {
 })
 
 const inputOperator = (operator) => {
-    if (calculationOperator ==='') {
+    if (calculationOperator === '') {
         prevNumber = currentNumber
     }
     calculationOperator = operator
     currentNumber = '0'
 }
+
 const equalSign = document.querySelector('.equal-sign')
 
 equalSign.addEventListener('click', () => {
@@ -49,7 +50,7 @@ const calculate = () => {
     let result = ''
     switch(calculationOperator){
         case '+':
-            result = parseFloat(prevNumber) + parseFloat(currentNumber)
+            result = (parseFloat(prevNumber) * 10 + parseFloat(currentNumber) * 10) /10
             break
         case '-':
             result = prevNumber - currentNumber
@@ -92,4 +93,18 @@ inputDecimal = (dot) => {
         return
     }
     currentNumber += dot
+}
+
+const percentage = document.querySelector('.percentage')
+
+percentage.addEventListener('click', (event) => {
+    inputPercentage(event.target.value)
+    updateScreen(currentNumber)
+})
+
+inputPercentage = (percentage) => {
+    if (currentNumber.includes('%')) {
+        return
+    }
+    currentNumber = prevNumber * currentNumber/100
 }
